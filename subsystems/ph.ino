@@ -1,28 +1,58 @@
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(10, OUTPUT);
-  pinMode(11,OUTPUT);
-  pinMode(8,OUTPUT);
-  TargetpHValue = 5
- 
+const int LowPHpump= 9;
+const int HighPHpump=10;
 
+float TargetPH=5;
+
+void setup()
+{
+  pinMode(LowPHpump, OUTPUT);
+  pinMode(HighPHpump, OUTPUT);
+ 
+ 
 Serial.begin(9600);
+delay(300);
 }
 
+
 void loop() {
-  int pHSensorValue = analogRead(A2);
-  float pHOutput = map(pHSensorValue,0,1023,0,14);
-  pHDigitalDifference = pHOutput-TargetpHValue;
-  analogWrite(6,pHOutput);
  
-  if （pHDigitalDifference > 0.5）{
-    digitalWrite(10,HIGH);
-    delay(1000);
-    digitalWrite(10,LOW);
+  float Analoguevalue=analogRead(A2);
+
+  float RealpH=map(Analoguevalue,540,465,4,10);
+   
+
+  if (Analoguevalue>465 && Analoguevalue<480)
+  {
+    Serial.println((String)"Solution pH is 10 "+"Analogue value ="+Analoguevalue);
   }
-  else if （pHDigitalDifference < -0.5）{
-    digitalWrite(11,HIGH);
-    delay(1000);
-    digitalWrite(11,LOW);
+  else if (Analoguevalue>495 && Analoguevalue<500)
+  {
+    Serial.println((String)"Solution pH is 7 "+"Analogue value ="+Analoguevalue);  
   }
+    else if (Analoguevalue>530 && Analoguevalue<540)
+  {
+   Serial.println((String)"Solution pH is 4 "+"Analogue value ="+Analoguevalue);
+  }
+
+  if (RealpH<TargetPH)
+  {
+    digitalWrite(LowPHpump, HIGH);
+    digitalWrite(HighPHpump, LOW);
+  }
+  else if (RealpH>TargetPH)
+  {
+    digitalWrite(LowPHpump, HIGH);
+    digitalWrite(HighPHpump, LOW);
+  }
+  else
+  {
+    digitalWrite(LowPHpump, LOW);
+    digitalWrite(HighPHpump, LOW);
+   
+  }
+ 
+Serial.println((String)"Analogue value ="+Analoguevalue);  
+Serial.println((String)"Solution pH is ="+RealpH);
+     
+
 }
