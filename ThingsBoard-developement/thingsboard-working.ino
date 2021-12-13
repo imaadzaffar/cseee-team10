@@ -2,8 +2,8 @@
 #include <ThingsBoard.h>      // ThingsBoard SDK
 #include "esp_wpa2.h"   //wpa2 library for connections to Enterprise networks
 
-#define EAP_IDENTITY "zcabdgj@ucl.ac.uk"                
-#define EAP_PASSWORD "dycdiz-nyMbi1-jopjyz" // Secure
+#define EAP_IDENTITY ""                
+#define EAP_PASSWORD "" // Secure
 const char* essid = "eduroam";
 
 // Helper macro to calculate array size
