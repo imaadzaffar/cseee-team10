@@ -10,8 +10,8 @@
 #define TOKEN               "0exNgzuDnwPw7iaUumqi"
 #define THINGSBOARD_SERVER  "demo.thingsboard.io"
 
-#define EAP_IDENTITY "zcabdgj@ucl.ac.uk"                
-#define EAP_PASSWORD "dycdiz-nyMbi1-jopjyz" // Secure
+#define EAP_IDENTITY ""                
+#define EAP_PASSWORD ""// Secure
 
 WiFiClient espClient;
 ThingsBoard tb(espClient);
