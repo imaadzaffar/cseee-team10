@@ -8,8 +8,8 @@
 #define TOKEN               "0exNgzuDnwPw7iaUumqi"
 #define THINGSBOARD_SERVER  "demo.thingsboard.io"
 
-#define EAP_IDENTITY "zcabdgj@ucl.ac.uk"                
-#define EAP_PASSWORD "dycdiz-nyMbi1-jopjyz" // Secure
+#define EAP_IDENTITY ""                
+#define EAP_PASSWORD "" // Secure
 
 #define COUNT_OF(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 
